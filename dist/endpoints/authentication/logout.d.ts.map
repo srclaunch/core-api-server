@@ -1,0 +1,1 @@
+{"version":3,"file":"logout.d.ts","sourceRoot":"","sources":["../../../src/endpoints/authentication/logout.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAK5C,eAAO,MAAM,eAAe;kBACN,OAAO,OAAO,QAAQ,KAAG,QAAQ,IAAI,CAAC;CAa3D,CAAC"}

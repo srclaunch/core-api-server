@@ -1,0 +1,1 @@
+{"version":3,"file":"tokens.d.ts","sourceRoot":"","sources":["../../../../../src/lib/core/auth/cognito/tokens.ts"],"names":[],"mappings":"AAQA,OAAO,EAAE,oBAAoB,EAAE,MAAM,kBAAkB,CAAC;AAiBxD,wBAAsB,YAAY,CAAC,EACjC,SAAS,EACT,YAAY,GACb,EAAE;IACD,SAAS,EAAE,MAAM,CAAC;IAClB,YAAY,EAAE,MAAM,CAAC;CACtB,GAAG,OAAO,CAAC;IACV,MAAM,EAAE,oBAAoB,CAAC;CAC9B,CAAC,CAwED"}
