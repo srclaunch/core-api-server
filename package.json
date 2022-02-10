@@ -36,7 +36,8 @@
   "scripts": {
     "build:types": "tsc --build --force",
     "build:applab": "yarn applab build",
-    "build": "yarn build:applab && yarn build:types"
+    "build": "yarn build:applab && yarn build:types",
+    "push": "git push --follow-tags origin main"
   },
   "devDependencies": {
     "@srclaunch/cli": "^0.1.2",
