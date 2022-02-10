@@ -1,6 +1,6 @@
-import Cookies from 'cookies';
-import { Request, Response } from 'express';
+// import Cookies from 'cookies';
 import { getEnvironment } from '@srclaunch/node-environment';
+import { Request, Response } from 'express';
 
 // import { getSigningKeys } from '../../lib/utils/crypto';
 
