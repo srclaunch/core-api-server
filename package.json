@@ -3,7 +3,7 @@
   "description": "AppLab Core API server",
   "author": "Steven Bennett <steven@srclaunch.com>",
   "license": "MIT",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "engines": {
     "node": ">=16"
   },
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@srclaunch/data-client": "^0.1.2",
-    "@srclaunch/http-server": "^0.1.2",
+    "@srclaunch/http-server": "^0.1.3",
     "aws-sdk": "^2.1069.0",
     "change-case": "^4.1.2",
     "config": "^3.3.7",
