@@ -1,6 +1,6 @@
 import Cookies from 'cookies';
 import { Request, Response } from 'express';
-import { getEnvironment } from '@srclaunch/environment-node';
+import { getEnvironment } from '@srclaunch/node-environment';
 
 // import { getSigningKeys } from '../../lib/utils/crypto';
 
@@ -9,7 +9,6 @@ export const LogoutEndpoints = {
     // TODO: Invalidate tokens and actually remove cookie
     // const keys = getSigningKeys();
     // const cookies = new Cookies(req, res, { keys });
-
     // cookies.set('refresh_token', null, {
     //   domain:
     //     getEnvironment().id === 'dev' ? 'localhost' : 'budgetbloom.com',

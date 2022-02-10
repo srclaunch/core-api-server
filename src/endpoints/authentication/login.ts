@@ -5,7 +5,7 @@ import {
   CognitoMissingUserPoolIdException,
   MissingRequestBodyPropertyException,
 } from '@srclaunch/exceptions';
-import { getEnvironment } from '@srclaunch/environment-node';
+import { getEnvironment } from '@srclaunch/node-environment';
 import Cookies from 'cookies';
 import { Request, Response } from 'express';
 import {
@@ -17,7 +17,6 @@ import {
 // import { getSigningKeys } from '../../lib/utils/crypto';
 // import { AuthenticationInvalidRefreshTokenException } from '@srclaunch/exceptions';
 // import { confirmDevice } from '../../lib/core/auth/cognito/devices';
-
 
 // const { AWS_COGNITO_USER_POOL_ID } = process.env;
 //
@@ -32,10 +31,7 @@ import {
 //   );
 
 export default {
-  login: async (
-    req: Request,
-    res: Response,
-  ) => {
+  login: async (req: Request, res: Response) => {
     /*
     Promise<
     Response<{
@@ -49,7 +45,6 @@ export default {
     //   secure: getEnvironment().id !== 'dev',
     // });
     // const deviceKey = cookies.get('deviceKey');
-
     // if (!username) {
     //   throw new MissingRequestBodyPropertyException('username', {
     //     origin: {
@@ -59,7 +54,6 @@ export default {
     //     scope: 'Authentication',
     //   });
     // }
-
     // if (!password) {
     //   throw new MissingRequestBodyPropertyException('password', {
     //     origin: {
@@ -69,11 +63,9 @@ export default {
     //     scope: 'Authentication',
     //   });
     // }
-
     // const headersMap = Object.entries(req.headers).map(h => {
     //   return { headerName: h[0], headerValue: h[1]?.toString() ?? '' };
     // });
-
     // const fingerprintData = {
     //   deviceKey,
     //   encodedData: fingerprint,
@@ -86,19 +78,15 @@ export default {
     //   serverName: 'localhost:8080',
     //   serverPath: '/core-api/auth/login',
     // };
-
     // const response = await login({
     //   username,
     //   password,
     //   fingerprint: fingerprintData,
     // });
-
     // if ('challenge' in response) {
     //   return res.send(200).json(response);
     // }
-
     // const { newDevice, tokens } = response;
-
     // cookies.set('idToken', tokens.idToken, {
     //   domain: getEnvironment().id === 'dev' ? 'localhost' : 'srclaunch.com',
     //   path: '/',
@@ -107,7 +95,6 @@ export default {
     //   secure: getEnvironment().id !== 'dev',
     //   signed: true,
     // });
-
     // cookies.set('refreshToken', tokens.refreshToken, {
     //   domain: getEnvironment().id === 'dev' ? 'localhost' : 'srclaunch.com',
     //   path: '/',
@@ -116,7 +103,6 @@ export default {
     //   secure: getEnvironment().id !== 'dev',
     //   signed: true,
     // });
-
     // if (newDevice && newDevice.key) {
     //   // const userPoolId = AWS_COGNITO_USER_POOL_ID.split('_')[1];
     //   // THIS DOESN'T WORK
@@ -124,7 +110,6 @@ export default {
     //   console.log('userPoolId in adddevice', userPoolId);
     //   const userPool = new UserPool(userPoolId);
     //   const user = await userPool.createUser({ username, password });
-
     //   console.log('new device user auth with pw', user);
     //   const confirmDeviceResult = await confirmDevice({
     //     accessToken: tokens.accessToken,
@@ -132,7 +117,6 @@ export default {
     //     passwordVerifier: user.verifier,
     //     salt: user.salt,
     //   });
-
     //   cookies.set('deviceKey', newDevice.key, {
     //     domain: getEnvironment().id === 'dev' ? 'localhost' : 'srclaunch.com',
     //     path: '/',
@@ -141,10 +125,8 @@ export default {
     //     secure: getEnvironment().id !== 'dev',
     //     signed: true,
     //   });
-
     //   console.log('confirmDeviceResult', confirmDeviceResult);
     // }
-
     // return res
     //   .set('Cache-Control', 'no-store')
     //   .set('Pragma', 'no-cache')
@@ -153,10 +135,7 @@ export default {
     //     tokens,
     //   });
   },
-  authenticateToken: async (
-    req: Request,
-    res: Response,
-  ) => {
+  authenticateToken: async (req: Request, res: Response) => {
     /* : Promise<
     Response<{
       tokens: AuthenticationTokens;
@@ -175,27 +154,22 @@ export default {
       // const deviceKey = cookies.get('deviceKey');
       // const cookieRefreshToken = cookies.get('refreshToken');
       // const refreshToken = authHeaderRefreshToken ?? cookieRefreshToken;
-
       // console.log('deviceKey in auth with token', deviceKey);
-
       // if (!refreshToken) {
       //   throw new AuthenticationMissingRefreshTokenException(
       //     `Missing refresh token`,
       //     {},
       //   );
       // }
-
       // if (!deviceKey) {
       //   throw new AuthenticationMissingDeviceKeyException(
       //     `Missing device key`,
       //     {},
       //   );
       // }
-
       // const headersMap = Object.entries(req.headers).map(h => {
       //   return { headerName: h[0], headerValue: h[1]?.toString() ?? '' };
       // });
-
       // const fingerprintData = {
       //   deviceKey,
       //   encodedData: fingerprint,
@@ -208,19 +182,16 @@ export default {
       //   serverName: 'localhost:8080',
       //   serverPath: '/core-api/auth/login',
       // };
-
       // const result = await authenticateToken({
       //   fingerprint: fingerprintData,
       //   refreshToken,
       // });
-
       // cookies.set('refreshToken', result.tokens.refreshToken, {
       //   domain: getEnvironment().id === 'dev' ? 'localhost' : 'budgetbloom.com',
       //   httpOnly: true,
       //   secure: getEnvironment().id !== 'dev',
       //   signed: true,
       // });
-
       // return res
       //   .set('Cache-Control', 'no-store')
       //   .set('Pragma', 'no-cache')
@@ -248,10 +219,7 @@ export default {
       throw err;
     }
   },
-  refreshAccessToken: async (
-    req: Request,
-    res: Response,
-  )=> {
+  refreshAccessToken: async (req: Request, res: Response) => {
     /*
     : Promise<
     Response<{
@@ -270,37 +238,30 @@ export default {
     // const cookieRefreshToken = cookies.get('refreshToken');
     // const existingRefreshToken = authHeaderRefreshToken ?? cookieRefreshToken;
     // const deviceKey = cookies.get('deviceKey');
-
     // if (!existingRefreshToken) {
     //   throw new AuthenticationMissingRefreshTokenException(
     //     `Missing refresh token`,
     //     {},
     //   );
     // }
-
     // if (!deviceKey) {
     //   throw new AuthenticationMissingDeviceKeyException(
     //     `Missing device key`,
     //     {},
     //   );
     // }
-
     // const result = await refreshToken({
     //   deviceKey,
     //   refreshToken: existingRefreshToken,
     // });
-
     // console.log('refreshToken result', result);
-
     // const { tokens } = result;
-
     // cookies.set('refreshToken', tokens.refreshToken, {
     //   domain: getEnvironment().id === 'dev' ? 'localhost' : 'budgetbloom.com',
     //   httpOnly: true,
     //   secure: getEnvironment().id !== 'dev',
     //   signed: true,
     // });
-
     // return res
     //   .set('Cache-Control', 'no-store')
     //   .set('Pragma', 'no-cache')
