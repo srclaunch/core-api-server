@@ -29,7 +29,7 @@ export type CoreAPIServerOptions =  {
     trustedOrigins?: {
       [environment: Environment['id']]: string[];
     };
-},
+  },
 };
 
 export class CoreAPIServer {

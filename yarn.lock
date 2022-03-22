@@ -148,7 +148,7 @@ __metadata:
   resolution: "@srclaunch/core-api-server@workspace:."
   dependencies:
     "@srclaunch/cli": ^0.1.18
-    "@srclaunch/data-client": ^0.1.3
+    "@srclaunch/data-client": ^0.1.4
     "@srclaunch/dx": ^0.1.15
     "@srclaunch/exceptions": ^0.1.6
     "@srclaunch/http-server": ^0.1.5
@@ -180,13 +180,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@srclaunch/data-client@npm:^0.1.3":
-  version: 0.1.3
-  resolution: "@srclaunch/data-client@npm:0.1.3"
+"@srclaunch/data-client@npm:^0.1.4":
+  version: 0.1.4
+  resolution: "@srclaunch/data-client@npm:0.1.4"
   dependencies:
-    "@srclaunch/exceptions": ^0.1.2
+    "@srclaunch/exceptions": ^0.1.6
     "@srclaunch/logger": ^0.1.2
-    "@srclaunch/node-environment": ^0.1.2
+    "@srclaunch/node-environment": ^0.1.4
     "@srclaunch/secrets": ^0.1.2
     aws-sdk: ^2.1069.0
     change-case: ^4.1.2
@@ -195,7 +195,7 @@ __metadata:
     pluralize: ^8.0.0
     sequelize: 6.14.0
     tunnel-ssh: ^4.1.6
-  checksum: 528356b34cc003354d101300b3499d7a337cfc48021e4bda18a849452adffd93f5196f252e70ee905731e33affaa313b48db72ddcc8daa4b37e8e55a3f56e918
+  checksum: 7afe8b359a8b3429cdeb4fb2cb553b351aa3de7707aa18dc9db82fdb6ce971c3ccc46c8375042725bfdac53e30fc2249a26f5a7fd194bccfdaab1613b48a8c4d
   languageName: node
   linkType: hard
 
@@ -250,7 +250,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/node-environment@npm:^0.1.2, @srclaunch/node-environment@npm:^0.1.4":
+"@srclaunch/node-environment@npm:^0.1.4":
   version: 0.1.4
   resolution: "@srclaunch/node-environment@npm:0.1.4"
   checksum: bc7b255a2e4d566201cd6c3b991389b3a4c1ab239f2dc3d10618b754769dcb357f594212fd1ffa0f7468720c146239848f47017e35b71840a71e6742ee164e8f
