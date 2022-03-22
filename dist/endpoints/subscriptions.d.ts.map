@@ -1,1 +1,0 @@
-{"version":3,"file":"subscriptions.d.ts","sourceRoot":"","sources":["../../src/endpoints/subscriptions.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAY5C,eAAO,MAAM,qBAAqB;kBACZ,OAAO,OAAO,QAAQ,KAAG,QAAQ,SAAS,IAAI,CAAC,CAAC;kBAU7D,OAAO,OACP,QAAQ;qBAiBQ,OAAO,OAAO,QAAQ;kBAUtC,OAAO,OACP,QAAQ;gBAYR,OAAO,OACP,QAAQ;CAUhB,CAAC"}

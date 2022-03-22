@@ -20,7 +20,6 @@
     "buildFile": "index.cjs.js",
     "buildTypes": false,
     "bundle": true,
-    "codeSplitting": false,
     "define": {},
     "excludeLibs": ["@srclaunch/http-server", "aws-sdk", "config", "sequelize", "fs-extra"],
     "format": "cjs",

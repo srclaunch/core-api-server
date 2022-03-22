@@ -1,10 +1,10 @@
 import { Exception } from '@srclaunch/exceptions';
 import Logger from '@srclaunch/logger';
 import { HttpServer } from '@srclaunch/http-server';
-import { HttpRequestMethod } from '@srclaunch/types';
+import { Environment, HttpRequestMethod } from '@srclaunch/types';
+import { DataClient, DataClientOptions } from '@srclaunch/data-client';
 
 import entityEndpoints from './endpoints/entities';
-import { DataClient, DataClientOptions } from '@srclaunch/data-client';
 
 const logger = new Logger();
 
@@ -25,6 +25,11 @@ export type CoreAPIServerOptions =  {
     alter?: boolean;
     force?: boolean;
   };
+  security?: {
+    trustedOrigins?: {
+      [environment: Environment['id']]: string[];
+    };
+},
 };
 
 export class CoreAPIServer {
@@ -86,6 +91,9 @@ export class CoreAPIServer {
           route: '/:model/:id',
         },
       ],
+      options: {
+        trustedOrigins: this.config.security?.trustedOrigins,
+      },
       name: 'core-api',
     });
 
