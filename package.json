@@ -40,6 +40,7 @@
     "build": "yarn clean && yarn build:applab && yarn build:types",
     "clean": "rm -fr ./dist",
     "push": "git push --follow-tags origin main",
+    "release": "yarn standard-version && git push --follow-tags origin main",
     "test": "ava",
     "yui": "yarn upgrade-interactive"
   },
