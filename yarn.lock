@@ -149,10 +149,10 @@ __metadata:
   resolution: "@srclaunch/core-api-server@workspace:."
   dependencies:
     "@srclaunch/cli": ^0.1.83
-    "@srclaunch/data-client": ^0.1.15
+    "@srclaunch/data-client": ^0.1.16
     "@srclaunch/dx": ^0.1.18
     "@srclaunch/exceptions": ^0.1.16
-    "@srclaunch/http-server": ^0.1.15
+    "@srclaunch/http-server": ^0.1.16
     "@srclaunch/logger": ^0.1.8
     "@srclaunch/node-environment": ^0.1.7
     "@srclaunch/types": ^0.1.23
@@ -180,9 +180,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@srclaunch/data-client@npm:^0.1.15":
-  version: 0.1.15
-  resolution: "@srclaunch/data-client@npm:0.1.15"
+"@srclaunch/data-client@npm:^0.1.16":
+  version: 0.1.16
+  resolution: "@srclaunch/data-client@npm:0.1.16"
   dependencies:
     "@srclaunch/exceptions": ^0.1.16
     "@srclaunch/logger": ^0.1.8
@@ -193,7 +193,7 @@ __metadata:
     pluralize: ^8.0.0
     sequelize: 6.17.0
     tunnel-ssh: ^4.1.6
-  checksum: c1e528cf0baedb781fa55e409a4648f8628d4783681f64952810d84ee9eeb72bc550c6cc79e0456cbbf78e1e6b8e6f721561f50751fb1130ec32f30d3172975a
+  checksum: 4d5cd3bad17d1c241019232c9ac4af1860919178d8db685db7e49988098120fefddbe3c5692f8ec23527316da6b41701b110300ebe748d07d529b21af2cb86fc
   languageName: node
   linkType: hard
 
@@ -216,9 +216,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/http-server@npm:^0.1.15":
-  version: 0.1.15
-  resolution: "@srclaunch/http-server@npm:0.1.15"
+"@srclaunch/http-server@npm:^0.1.16":
+  version: 0.1.16
+  resolution: "@srclaunch/http-server@npm:0.1.16"
   dependencies:
     "@srclaunch/exceptions": ^0.1.16
     "@srclaunch/logger": ^0.1.8
@@ -229,7 +229,7 @@ __metadata:
     express: ^4.17.3
     helmet: ^5.0.2
     multer: ^1.4.4
-  checksum: 9ba954abe5e2cb54d00f94067b7c9f5387f41c80cddb9346266dd9a2c596a2ae54574d049ed9ede109feba32ea4fc2c1eb122b5db0c4fa064e8ff33916d26af1
+  checksum: 0f1effb4037a95efcebc0d08a464752834bdeea7f00ec01733d3f73845088030e6a7754400713bf84b976df3fe0b5c75db292fa0e7104675fd8f01477f769051
   languageName: node
   linkType: hard
 
