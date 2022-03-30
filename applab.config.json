@@ -12,6 +12,7 @@
         "compression",
         "express",
         "multer",
+        "pg",
         "sequelize"
       ],
       "format": "esm",
@@ -34,6 +35,7 @@
         "compression",
         "express",
         "multer",
+        "pg",
         "sequelize"
       ],
       "format": "cjs",
