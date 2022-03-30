@@ -1,41 +1,41 @@
-import { Exception } from '@srclaunch/exceptions';
-import Logger from '@srclaunch/logger';
-import { HttpServer } from '@srclaunch/http-server';
-import { Environment, HttpRequestMethod } from '@srclaunch/types';
 import { DataClient, DataClientOptions } from '@srclaunch/data-client';
+import { Exception } from '@srclaunch/exceptions';
+import { HttpServer } from '@srclaunch/http-server';
+import Logger from '@srclaunch/logger';
+import { Environment, HttpRequestMethod } from '@srclaunch/types';
 
 import entityEndpoints from './endpoints/entities';
 
 const logger = new Logger();
 
-export type CoreAPIServerOptions =  {
-  aws: {
-    accessKeyId?: string;
-    cognito: {
-      identityPoolId?: string;
+export type CoreAPIServerOptions = {
+  readonly aws: {
+    readonly accessKeyId?: string;
+    readonly cognito: {
+      readonly identityPoolId?: string;
     };
-    s3: {
-      bucket?: string;
-      region?: string;
+    readonly s3: {
+      readonly bucket?: string;
+      readonly region?: string;
     };
-    region?: string;
-    secretAccessKey?: string;
+    readonly region?: string;
+    readonly secretAccessKey?: string;
   };
-  db: DataClientOptions & {
-    alter?: boolean;
-    force?: boolean;
+  readonly db: DataClientOptions & {
+    readonly alter?: boolean;
+    readonly force?: boolean;
   };
-  security?: {
-    trustedOrigins?: {
-      [environment: Environment['id']]: string[];
+  readonly security?: {
+    readonly trustedOrigins?: {
+      readonly [environment: Environment['id']]: string[];
     };
-  },
+  };
 };
 
 export class CoreAPIServer {
-  config?: CoreAPIServerOptions;
-  db?: DataClient;
-  models?: CoreAPIServerOptions['db']['models'];
+  private config?: CoreAPIServerOptions;
+  private db?: DataClient;
+  private readonly models?: CoreAPIServerOptions['db']['models'];
 
   constructor(config: CoreAPIServerOptions) {
     this.config = config;
@@ -48,6 +48,8 @@ export class CoreAPIServer {
       throw new Exception('Core API Server config is missing connection');
     }
 
+    console.log('this.confi', this.config);
+
     this.db = new DataClient({
       connection: this.config.db.connection,
       models: this.config.db.models,
@@ -56,50 +58,74 @@ export class CoreAPIServer {
     const server = new HttpServer({
       endpoints: [
         {
-          handler: entityEndpoints({ aws: this.config.aws, dataClient: this.db }).create,
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).create,
           method: HttpRequestMethod.Post,
           route: '/:model',
         },
         {
-          handler: entityEndpoints({ aws: this.config.aws, dataClient: this.db }).deleteMany,
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).deleteMany,
           method: HttpRequestMethod.Delete,
           route: '/:model',
         },
         {
-          handler: entityEndpoints({ aws: this.config.aws, dataClient: this.db }).deleteOne,
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).deleteOne,
           method: HttpRequestMethod.Delete,
           route: '/:model/:id',
         },
         {
-          handler: entityEndpoints({ aws: this.config.aws, dataClient: this.db }).getMany,
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).getMany,
           method: HttpRequestMethod.Get,
           route: '/:model',
         },
         {
-          handler: entityEndpoints({ aws: this.config.aws, dataClient: this.db }).getOne,
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).getOne,
           method: HttpRequestMethod.Get,
           route: '/:model/:id',
         },
         {
-          handler: entityEndpoints({ aws: this.config.aws, dataClient: this.db }).updateMany,
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).updateMany,
           method: HttpRequestMethod.Put,
           route: '/:model',
         },
         {
-          handler: entityEndpoints({ aws: this.config.aws, dataClient: this.db }).updateOne,
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).updateOne,
           method: HttpRequestMethod.Put,
           route: '/:model/:id',
         },
       ],
+      name: 'core-api',
       options: {
         trustedOrigins: this.config.security?.trustedOrigins,
       },
-      name: 'core-api',
     });
 
     server.listen();
 
-    await this.db.connect({ alter: this.config.db.alter ?? false, force:  this.config.db.force ?? false });
+    await this.db.connect({
+      alter: this.config.db.alter ?? false,
+      force: this.config.db.force ?? false,
+    });
 
     logger.info('Core API Server started');
   }

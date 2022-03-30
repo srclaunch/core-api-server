@@ -1,32 +1,32 @@
+import { DataClientOptions } from '@srclaunch/data-client';
 import { Environment } from '@srclaunch/types';
-import { DataClient, DataClientOptions } from '@srclaunch/data-client';
 export declare type CoreAPIServerOptions = {
-    aws: {
-        accessKeyId?: string;
-        cognito: {
-            identityPoolId?: string;
+    readonly aws: {
+        readonly accessKeyId?: string;
+        readonly cognito: {
+            readonly identityPoolId?: string;
         };
-        s3: {
-            bucket?: string;
-            region?: string;
+        readonly s3: {
+            readonly bucket?: string;
+            readonly region?: string;
         };
-        region?: string;
-        secretAccessKey?: string;
+        readonly region?: string;
+        readonly secretAccessKey?: string;
     };
-    db: DataClientOptions & {
-        alter?: boolean;
-        force?: boolean;
+    readonly db: DataClientOptions & {
+        readonly alter?: boolean;
+        readonly force?: boolean;
     };
-    security?: {
-        trustedOrigins?: {
-            [environment: Environment['id']]: string[];
+    readonly security?: {
+        readonly trustedOrigins?: {
+            readonly [environment: Environment['id']]: string[];
         };
     };
 };
 export declare class CoreAPIServer {
-    config?: CoreAPIServerOptions;
-    db?: DataClient;
-    models?: CoreAPIServerOptions['db']['models'];
+    private config?;
+    private db?;
+    private readonly models?;
     constructor(config: CoreAPIServerOptions);
     start(): Promise<void>;
 }
