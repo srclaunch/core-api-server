@@ -149,12 +149,12 @@ __metadata:
   resolution: "@srclaunch/core-api-server@workspace:."
   dependencies:
     "@srclaunch/cli": ^0.1.83
-    "@srclaunch/data-client": ^0.1.12
+    "@srclaunch/data-client": ^0.1.13
     "@srclaunch/dx": ^0.1.18
     "@srclaunch/exceptions": ^0.1.16
-    "@srclaunch/http-server": ^0.1.10
+    "@srclaunch/http-server": ^0.1.11
     "@srclaunch/logger": ^0.1.8
-    "@srclaunch/node-environment": ^0.1.4
+    "@srclaunch/node-environment": ^0.1.7
     "@srclaunch/types": ^0.1.23
     "@types/express": ^4.17.13
     "@types/keygrip": ^1.0.2
@@ -180,20 +180,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@srclaunch/data-client@npm:^0.1.12":
-  version: 0.1.12
-  resolution: "@srclaunch/data-client@npm:0.1.12"
+"@srclaunch/data-client@npm:^0.1.13":
+  version: 0.1.13
+  resolution: "@srclaunch/data-client@npm:0.1.13"
   dependencies:
     "@srclaunch/exceptions": ^0.1.16
     "@srclaunch/logger": ^0.1.8
-    "@srclaunch/node-environment": ^0.1.4
+    "@srclaunch/node-environment": ^0.1.7
     change-case: ^4.1.2
     pg: ^8.7.3
     pg-hstore: ^2.3.4
     pluralize: ^8.0.0
     sequelize: 6.17.0
     tunnel-ssh: ^4.1.6
-  checksum: 57c7ee08da3a3ddb36efd2c02a3b8b1fec2c8b40401a4c466d163439a34e763829628f0de4e2deecc3ab4322d1984b6e96baa232ecb544f236eea042d74d6889
+  checksum: c1af55292ecb5b6c941d1ed9ec7f0e460a0fd79646c0e2583a056f11914b3d013cce8d24b2031a33e3dd26aaa0c48c84d8045bfa195e62efae0e97350e8e8d99
   languageName: node
   linkType: hard
 
@@ -216,20 +216,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/http-server@npm:^0.1.10":
-  version: 0.1.10
-  resolution: "@srclaunch/http-server@npm:0.1.10"
+"@srclaunch/http-server@npm:^0.1.11":
+  version: 0.1.11
+  resolution: "@srclaunch/http-server@npm:0.1.11"
   dependencies:
     "@srclaunch/exceptions": ^0.1.16
     "@srclaunch/logger": ^0.1.8
-    "@srclaunch/node-environment": ^0.1.4
+    "@srclaunch/node-environment": ^0.1.7
     async-exit-hook: ^2.0.1
     compression: ^1.7.4
     cors: ^2.8.5
     express: ^4.17.3
     helmet: ^5.0.2
     multer: ^1.4.4
-  checksum: d710c25b7c410fde12b0250c6074929d001b0a5b3962aaf4825b60ebb1d3f285d1de659b51c8a8bccdc13a7372a2a88f33f26f42b378a9a784384ceb733c1175
+  checksum: 127e395f1fcbf0784f53b142cdd4340cfe444998a820a80ef924039188ad7f032b235bcf76da5df373d414f069bfa85ae05609c6b184af2e2399bcc31789d426
   languageName: node
   linkType: hard
 
@@ -246,10 +246,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/node-environment@npm:^0.1.4":
-  version: 0.1.4
-  resolution: "@srclaunch/node-environment@npm:0.1.4"
-  checksum: bc7b255a2e4d566201cd6c3b991389b3a4c1ab239f2dc3d10618b754769dcb357f594212fd1ffa0f7468720c146239848f47017e35b71840a71e6742ee164e8f
+"@srclaunch/node-environment@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "@srclaunch/node-environment@npm:0.1.7"
+  checksum: b1846df6bfffb5fa50e05926fe310a7250567ea2a2e1f8f8866e1446e7355296597b1fd7d1ee984700de2b7d0aee21f0247f5b615906ac700af2b2d557cf9664
   languageName: node
   linkType: hard
 
