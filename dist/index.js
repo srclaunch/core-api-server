@@ -3490,9 +3490,6 @@ function setupEndpoints({
 }
 var import_async_exit_hook = __toESM2(require_async_exit_hook(), 1);
 var exceptionHandlingMiddleware = async (err, req, res, next) => {
-  const logger42 = new e();
-  const exception = new s2(err.message, { cause: err });
-  logger42.exception(exception.toJSON());
   next();
 };
 var logger3 = new e();
@@ -3509,12 +3506,15 @@ function configureExceptionHandling(server, listener) {
   server.use(exceptionHandlingMiddleware);
   logger3.info("Error handling middleware initialized.");
   server.on("error", (err) => {
+    console.error("ERROR:", err);
     const isManaged = err instanceof s2;
     const exception = isManaged ? err : new v2(err.name, { cause: err });
     logger3.exception(exception.toJSON());
     console.error("ERROR:", exception.toJSON());
   });
-  (0, import_async_exit_hook.default)(async () => {
+  (0, import_async_exit_hook.default)(async (error) => {
+    console.log("exitHook");
+    console.log("error", error);
     listener.close((err) => {
       if (err) {
         const isManaged = err instanceof s2;
