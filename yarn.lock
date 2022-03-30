@@ -116,9 +116,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/cli@npm:^0.1.84":
-  version: 0.1.84
-  resolution: "@srclaunch/cli@npm:0.1.84"
+"@srclaunch/cli@npm:^0.1.85":
+  version: 0.1.85
+  resolution: "@srclaunch/cli@npm:0.1.85"
   dependencies:
     "@srclaunch/exceptions": ^0.1.6
     add: ^2.0.6
@@ -140,7 +140,7 @@ __metadata:
     update-notifier: ^5.1.0
   bin:
     applab: dist/index.js
-  checksum: b95798bf0fff14883352f0376947c56384f8df91a213a041cd4016c1c13577dc38122244134a568d46d3599a299bf0a33ccad72e385afb54a5b205b982fc215d
+  checksum: 9c2185a7ac3ae3deed7ae43a313ea30ef5ed727cafe7c1733d8e65e76e8e98189fda924979485863f243234056a98ce9a8c33b9c0e2546b509fc1a6fde341705
   languageName: node
   linkType: hard
 
@@ -148,11 +148,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@srclaunch/core-api-server@workspace:."
   dependencies:
-    "@srclaunch/cli": ^0.1.84
+    "@srclaunch/cli": ^0.1.85
     "@srclaunch/data-client": ^0.1.20
     "@srclaunch/dx": ^0.1.18
     "@srclaunch/exceptions": ^0.1.16
-    "@srclaunch/http-server": ^0.1.22
+    "@srclaunch/http-server": ^0.1.25
     "@srclaunch/logger": ^0.1.8
     "@srclaunch/node-environment": ^0.1.7
     "@srclaunch/types": ^0.1.23
@@ -216,9 +216,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/http-server@npm:^0.1.22":
-  version: 0.1.22
-  resolution: "@srclaunch/http-server@npm:0.1.22"
+"@srclaunch/http-server@npm:^0.1.25":
+  version: 0.1.25
+  resolution: "@srclaunch/http-server@npm:0.1.25"
   dependencies:
     "@srclaunch/exceptions": ^0.1.16
     "@srclaunch/logger": ^0.1.8
@@ -229,7 +229,7 @@ __metadata:
     express: ^4.17.3
     helmet: ^5.0.2
     multer: ^1.4.4
-  checksum: e1eba8f3dadb3b99769796c9c422b7d3ea6bb4781063ddabdeec60a79de9e9bea58af22c923ef8f507a604951be4ae44cb35896b8a2fd9e83d63c1f67b033346
+  checksum: bda110a0b73171cc03ed6622153359e3c7c1f7ff28e06455d898874bc3c6a6ffd70ecc1cece8a0492575093ca116dd7dad12ccb2852ed76d37f0f7ceebd1953d
   languageName: node
   linkType: hard
 
