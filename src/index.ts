@@ -120,12 +120,12 @@ export class CoreAPIServer {
       },
     });
 
-    server.listen();
-
     await this.db.connect({
       alter: this.config.db.alter ?? false,
       force: this.config.db.force ?? false,
     });
+
+    await server.listen();
 
     logger.info('Core API Server started');
   }

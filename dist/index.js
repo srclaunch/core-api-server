@@ -3512,6 +3512,7 @@ function configureExceptionHandling(server, listener) {
     const isManaged = err instanceof s2;
     const exception = isManaged ? err : new v2(err.name, { cause: err });
     logger3.exception(exception.toJSON());
+    console.error("ERROR:", exception.toJSON());
   });
   (0, import_async_exit_hook.default)(async () => {
     listener.close((err) => {
@@ -3574,12 +3575,13 @@ var HttpServer = class {
     this.logger.info("\u2764\uFE0F  Healthcheck service started.");
     this.logger.info("Server configured successfully.");
   }
-  listen(portArg) {
+  async listen(portArg) {
     const port = portArg ?? this.options?.port ?? 8080;
     this.logger.info(`Starting server in "${this.environment.name}" environment...`);
     this.secure();
     this.configure();
-    this.listener = this.server.listen(port, () => this.logger.info(`\u26A1 Server listening on port ${port}!`));
+    this.listener = await this.server.listen(port);
+    this.logger.info(`\u26A1 Server listening on port ${port}!`);
     configureExceptionHandling(this.server, this.listener);
   }
   secure() {
@@ -4020,11 +4022,11 @@ var CoreAPIServer = class {
         trustedOrigins: this.config.security?.trustedOrigins
       }
     });
-    server.listen();
     await this.db.connect({
       alter: this.config.db.alter ?? false,
       force: this.config.db.force ?? false
     });
+    await server.listen();
     logger4.info("Core API Server started");
   }
 };
