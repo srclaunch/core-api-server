@@ -8,6 +8,7 @@
       "codeSplitting": true,
       "define": {},
       "excludeLibs": [
+        "@srclaunch/exceptions",
         "@srclaunch/http-server",
         "aws-sdk",
         "config",
@@ -30,6 +31,7 @@
       "bundle": true,
       "define": {},
       "excludeLibs": [
+        "@srclaunch/exceptions",
         "@srclaunch/http-server",
         "aws-sdk",
         "config",
