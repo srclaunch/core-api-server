@@ -1,1 +1,0 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/endpoints/users/index.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAQ5C,eAAO,MAAM,aAAa;kBACJ,OAAO,OAAO,QAAQ,KAAG,QAAQ,SAAS,IAAI,CAAC,CAAC;kBAS7D,OAAO,OACP,QAAQ;6BA4CR,OAAO,OACP,QAAQ;CAyBhB,CAAC"}
