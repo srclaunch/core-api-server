@@ -149,7 +149,7 @@ __metadata:
   resolution: "@srclaunch/core-api-server@workspace:."
   dependencies:
     "@srclaunch/cli": ^0.1.83
-    "@srclaunch/data-client": ^0.1.18
+    "@srclaunch/data-client": ^0.1.20
     "@srclaunch/dx": ^0.1.18
     "@srclaunch/exceptions": ^0.1.16
     "@srclaunch/http-server": ^0.1.19
@@ -180,9 +180,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@srclaunch/data-client@npm:^0.1.18":
-  version: 0.1.18
-  resolution: "@srclaunch/data-client@npm:0.1.18"
+"@srclaunch/data-client@npm:^0.1.20":
+  version: 0.1.20
+  resolution: "@srclaunch/data-client@npm:0.1.20"
   dependencies:
     "@srclaunch/exceptions": ^0.1.16
     "@srclaunch/logger": ^0.1.8
@@ -193,7 +193,7 @@ __metadata:
     pluralize: ^8.0.0
     sequelize: 6.17.0
     tunnel-ssh: ^4.1.6
-  checksum: 90ea964f53969193b93409a2ce217e632efaeb56e6d9690dce004a1cfb1059c260055a0238fe678bc36940d01d6c7ed5e5b8640631b7d9c07d5c19e3daa6dd2d
+  checksum: cedfad6e0f1c70e48e67234494dd05d95b83ff39de2622d63eaaa08ddeba8b9ce0612182b519638b4f29a762d459c7ecff0e83c4595793351d85367fde3e60b6
   languageName: node
   linkType: hard
 
