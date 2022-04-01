@@ -152,7 +152,7 @@ __metadata:
     "@srclaunch/data-client": ^0.1.20
     "@srclaunch/dx": ^0.1.18
     "@srclaunch/exceptions": ^0.1.16
-    "@srclaunch/http-server": ^0.1.31
+    "@srclaunch/http-server": ^0.1.32
     "@srclaunch/logger": ^0.1.8
     "@srclaunch/node-environment": ^0.1.7
     "@srclaunch/types": ^0.1.23
@@ -173,7 +173,7 @@ __metadata:
     request-ip: ^2.1.3
     sequelize: ^6.17.0
     standard-version: ^9.3.2
-    stripe: ^8.214.0
+    stripe: ^8.215.0
     ts-node: ^10.7.0
     typescript: ^4.6.3
     uuid: ^8.3.2
@@ -216,9 +216,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/http-server@npm:^0.1.31":
-  version: 0.1.31
-  resolution: "@srclaunch/http-server@npm:0.1.31"
+"@srclaunch/http-server@npm:^0.1.32":
+  version: 0.1.32
+  resolution: "@srclaunch/http-server@npm:0.1.32"
   dependencies:
     "@srclaunch/exceptions": ^0.1.16
     "@srclaunch/logger": ^0.1.8
@@ -229,7 +229,7 @@ __metadata:
     express: ^4.17.3
     helmet: ^5.0.2
     multer: ^1.4.4
-  checksum: 72e79281e3d23c3d7cf2ea2c7009b1eca4f0a3c26acfcffa8a9a0d33f909900c93b43d7cda6e99d4a33bbba5923b05eba24fa4d06b958d8bf77d019573196f5b
+  checksum: ed20c99304340170229bb594e76b250de9884e9cb9a0fa055f6887f5b8a2eb5a70923eaf7419726ce2cd76bdefb5251cdf87fab7ff0ec233f1451ecc3f145490
   languageName: node
   linkType: hard
 
@@ -5838,13 +5838,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stripe@npm:^8.214.0":
-  version: 8.214.0
-  resolution: "stripe@npm:8.214.0"
+"stripe@npm:^8.215.0":
+  version: 8.215.0
+  resolution: "stripe@npm:8.215.0"
   dependencies:
     "@types/node": ">=8.1.0"
     qs: ^6.10.3
-  checksum: 4f1b744a4b7f1866a975a29480a6da1ea71901075386a31a72538013990b771987a7a3a4bd9d4132c0f1efe91f4335442879d2c7e9baab62c045c158d4567101
+  checksum: 0ccf3c66a259450a63b8d6f27920e04be1fad1207fb6a9c93bdffc250008e1dc915c44bac1d8b4a63be10fcd1865d4aa3de90c79f7966798c43fecab7e4f489d
   languageName: node
   linkType: hard
 
