@@ -3956,7 +3956,6 @@ var CoreAPIServer = class {
     if (!this.config?.db.connection) {
       throw new s("Core API Server config is missing connection");
     }
-    console.log("this.confi", this.config);
     this.db = new DataClient({
       connection: this.config.db.connection,
       models: this.config.db.models

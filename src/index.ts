@@ -48,8 +48,6 @@ export class CoreAPIServer {
       throw new Exception('Core API Server config is missing connection');
     }
 
-    console.log('this.confi', this.config);
-
     this.db = new DataClient({
       connection: this.config.db.connection,
       models: this.config.db.models,
