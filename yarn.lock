@@ -152,7 +152,7 @@ __metadata:
     "@srclaunch/data-client": ^0.1.20
     "@srclaunch/dx": ^0.1.18
     "@srclaunch/exceptions": ^0.1.16
-    "@srclaunch/http-server": ^0.1.32
+    "@srclaunch/http-server": ^0.1.34
     "@srclaunch/logger": ^0.1.8
     "@srclaunch/node-environment": ^0.1.7
     "@srclaunch/types": ^0.1.23
@@ -216,9 +216,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/http-server@npm:^0.1.32":
-  version: 0.1.32
-  resolution: "@srclaunch/http-server@npm:0.1.32"
+"@srclaunch/http-server@npm:^0.1.34":
+  version: 0.1.34
+  resolution: "@srclaunch/http-server@npm:0.1.34"
   dependencies:
     "@srclaunch/exceptions": ^0.1.16
     "@srclaunch/logger": ^0.1.8
@@ -228,8 +228,9 @@ __metadata:
     cors: ^2.8.5
     express: ^4.17.3
     helmet: ^5.0.2
+    morgan: ^1.10.0
     multer: ^1.4.4
-  checksum: ed20c99304340170229bb594e76b250de9884e9cb9a0fa055f6887f5b8a2eb5a70923eaf7419726ce2cd76bdefb5251cdf87fab7ff0ec233f1451ecc3f145490
+  checksum: beb588b11e3cc927155c40a58b10f3b7382e7d4803a61e0d0d46f2c82d0a5e12b3c78966ac58c3f152e0496d9177d800c43e4eac7857638539c5ea7916a5e372
   languageName: node
   linkType: hard
 
@@ -860,6 +861,15 @@ __metadata:
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
   checksum: 669632eb3745404c2f822a18fc3a0122d2f9a7a13f7fb8b5823ee19d1d2ff9ee5b52c53367176ea4ad093c332fd5ab4bd0ebae5a8e27917a4105a4cfc86b1005
+  languageName: node
+  linkType: hard
+
+"basic-auth@npm:~2.0.1":
+  version: 2.0.1
+  resolution: "basic-auth@npm:2.0.1"
+  dependencies:
+    safe-buffer: 5.1.2
+  checksum: 3419b805d5dfc518f3a05dcf42aa53aa9ce820e50b6df5097f9e186322e1bc733c36722b624802cd37e791035aa73b828ed814d8362333d42d7f5cd04d7a5e48
   languageName: node
   linkType: hard
 
@@ -1949,6 +1959,13 @@ __metadata:
   version: 1.1.2
   resolution: "depd@npm:1.1.2"
   checksum: 6b406620d269619852885ce15965272b829df6f409724415e0002c8632ab6a8c0a08ec1f0bd2add05dc7bd7507606f7e2cc034fa24224ab829580040b835ecd9
+  languageName: node
+  linkType: hard
+
+"depd@npm:~2.0.0":
+  version: 2.0.0
+  resolution: "depd@npm:2.0.0"
+  checksum: abbe19c768c97ee2eed6282d8ce3031126662252c58d711f646921c9623f9052e3e1906443066beec1095832f534e57c523b7333f8e7e0d93051ab6baef5ab3a
   languageName: node
   linkType: hard
 
@@ -4063,6 +4080,19 @@ __metadata:
   version: 2.29.1
   resolution: "moment@npm:2.29.1"
   checksum: 1e14d5f422a2687996be11dd2d50c8de3bd577c4a4ca79ba5d02c397242a933e5b941655de6c8cb90ac18f01cc4127e55b4a12ae3c527a6c0a274e455979345e
+  languageName: node
+  linkType: hard
+
+"morgan@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "morgan@npm:1.10.0"
+  dependencies:
+    basic-auth: ~2.0.1
+    debug: 2.6.9
+    depd: ~2.0.0
+    on-finished: ~2.3.0
+    on-headers: ~1.0.2
+  checksum: fb41e226ab5a1abf7e8909e486b387076534716d60207e361acfb5df78b84d703a7b7ea58f3046a9fd0b83d3c94bfabde32323341a1f1b26ce50680abd2ea5dd
   languageName: node
   linkType: hard
 
