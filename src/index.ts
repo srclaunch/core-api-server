@@ -50,91 +50,100 @@ export class CoreAPIServer {
   }
 
   public async start() {
-    this.logger.info('Starting Core API Server');
+    try {
+      this.logger.info('Starting Core API Server');
 
-    if (!this.config?.db.connection) {
-      throw new Exception('Core API Server config is missing connection');
+      if (!this.config?.db.connection) {
+        throw new Exception('Core API Server config is missing connection');
+      }
+
+      this.db = new DataClient({
+        connection: this.config.db.connection,
+        environment: this.environment,
+        logger: this.logger,
+        models: this.config.db.models,
+      });
+
+      const server = new HttpServer({
+        endpoints: [
+          {
+            handler: entityEndpoints({
+              aws: this.config.aws,
+              dataClient: this.db,
+            }).create,
+            method: HttpRequestMethod.Post,
+            route: '/:model',
+          },
+          {
+            handler: entityEndpoints({
+              aws: this.config.aws,
+              dataClient: this.db,
+            }).deleteMany,
+            method: HttpRequestMethod.Delete,
+            route: '/:model',
+          },
+          {
+            handler: entityEndpoints({
+              aws: this.config.aws,
+              dataClient: this.db,
+            }).deleteOne,
+            method: HttpRequestMethod.Delete,
+            route: '/:model/:id',
+          },
+          {
+            handler: entityEndpoints({
+              aws: this.config.aws,
+              dataClient: this.db,
+            }).getMany,
+            method: HttpRequestMethod.Get,
+            route: '/:model',
+          },
+          {
+            handler: entityEndpoints({
+              aws: this.config.aws,
+              dataClient: this.db,
+            }).getOne,
+            method: HttpRequestMethod.Get,
+            route: '/:model/:id',
+          },
+          {
+            handler: entityEndpoints({
+              aws: this.config.aws,
+              dataClient: this.db,
+            }).updateMany,
+            method: HttpRequestMethod.Put,
+            route: '/:model',
+          },
+          {
+            handler: entityEndpoints({
+              aws: this.config.aws,
+              dataClient: this.db,
+            }).updateOne,
+            method: HttpRequestMethod.Put,
+            route: '/:model/:id',
+          },
+        ],
+        environment: this.environment,
+        name: 'core-api',
+        logger: this.logger,
+        options: {
+          trustedOrigins: this.config.security?.trustedOrigins,
+        },
+      });
+
+      await this.db.connect({
+        alter: this.config.db.alter ?? false,
+        force: this.config.db.force ?? false,
+      });
+
+      await server.listen();
+
+      this.logger.info('Core API Server started');
+    } catch (err: any) {
+      const exception = new Exception(err.name, { cause: err });
+
+      this.logger.exception(exception.toJSON());
     }
-
-    this.db = new DataClient({
-      connection: this.config.db.connection,
-      models: this.config.db.models,
-    });
-
-    const server = new HttpServer({
-      endpoints: [
-        {
-          handler: entityEndpoints({
-            aws: this.config.aws,
-            dataClient: this.db,
-          }).create,
-          method: HttpRequestMethod.Post,
-          route: '/:model',
-        },
-        {
-          handler: entityEndpoints({
-            aws: this.config.aws,
-            dataClient: this.db,
-          }).deleteMany,
-          method: HttpRequestMethod.Delete,
-          route: '/:model',
-        },
-        {
-          handler: entityEndpoints({
-            aws: this.config.aws,
-            dataClient: this.db,
-          }).deleteOne,
-          method: HttpRequestMethod.Delete,
-          route: '/:model/:id',
-        },
-        {
-          handler: entityEndpoints({
-            aws: this.config.aws,
-            dataClient: this.db,
-          }).getMany,
-          method: HttpRequestMethod.Get,
-          route: '/:model',
-        },
-        {
-          handler: entityEndpoints({
-            aws: this.config.aws,
-            dataClient: this.db,
-          }).getOne,
-          method: HttpRequestMethod.Get,
-          route: '/:model/:id',
-        },
-        {
-          handler: entityEndpoints({
-            aws: this.config.aws,
-            dataClient: this.db,
-          }).updateMany,
-          method: HttpRequestMethod.Put,
-          route: '/:model',
-        },
-        {
-          handler: entityEndpoints({
-            aws: this.config.aws,
-            dataClient: this.db,
-          }).updateOne,
-          method: HttpRequestMethod.Put,
-          route: '/:model/:id',
-        },
-      ],
-      environment: this.environment,
-      name: 'core-api',
-      options: {
-        trustedOrigins: this.config.security?.trustedOrigins,
-      },
-    });
-
-    await this.db.connect({
-      alter: this.config.db.alter ?? false,
-      force: this.config.db.force ?? false,
-    });
-
-    await server.listen();
-
-    this.logger.info('Core API Server started');
   }
 }
 
