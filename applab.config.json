@@ -8,8 +8,6 @@
       "codeSplitting": true,
       "define": {},
       "excludeLibs": [
-        "@srclaunch/exceptions",
-        "@srclaunch/logger",
         "aws-sdk",
         "compression",
         "express",
@@ -33,8 +31,6 @@
       "bundle": true,
       "define": {},
       "excludeLibs": [
-        "@srclaunch/exceptions",
-        "@srclaunch/logger",
         "aws-sdk",
         "compression",
         "express",
