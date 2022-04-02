@@ -23,6 +23,7 @@ export type CoreAPIServerOptions = {
     readonly alter?: boolean;
     readonly force?: boolean;
   };
+  readonly environment: Environment;
   readonly security?: {
     readonly trustedOrigins?: {
       readonly [environment: Environment['id']]: string[];
@@ -33,11 +34,13 @@ export type CoreAPIServerOptions = {
 export class CoreAPIServer {
   private config?: CoreAPIServerOptions;
   private db?: DataClient;
+  private environment: Environment;
   private readonly models?: CoreAPIServerOptions['db']['models'];
   private logger: Logger;
 
   constructor(config: CoreAPIServerOptions) {
     this.config = config;
+    this.environment = config.environment;
     this.logger = new Logger();
   }
 
@@ -112,6 +115,7 @@ export class CoreAPIServer {
           route: '/:model/:id',
         },
       ],
+      environment: this.environment,
       name: 'core-api',
       options: {
         trustedOrigins: this.config.security?.trustedOrigins,

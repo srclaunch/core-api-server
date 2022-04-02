@@ -17,6 +17,7 @@ export declare type CoreAPIServerOptions = {
         readonly alter?: boolean;
         readonly force?: boolean;
     };
+    readonly environment: Environment;
     readonly security?: {
         readonly trustedOrigins?: {
             readonly [environment: Environment['id']]: string[];
@@ -26,6 +27,7 @@ export declare type CoreAPIServerOptions = {
 export declare class CoreAPIServer {
     private config?;
     private db?;
+    private environment;
     private readonly models?;
     private logger;
     constructor(config: CoreAPIServerOptions);
