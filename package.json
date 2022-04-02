@@ -61,10 +61,10 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "@srclaunch/data-client": "^0.1.24",
-    "@srclaunch/exceptions": "^0.1.24",
-    "@srclaunch/http-server": "^0.1.47",
-    "@srclaunch/logger": "^0.1.24",
+    "@srclaunch/data-client": "^0.1.25",
+    "@srclaunch/exceptions": "^0.1.25",
+    "@srclaunch/http-server": "^0.1.48",
+    "@srclaunch/logger": "^0.1.25",
     "@srclaunch/node-environment": "^0.1.7",
     "aws-sdk": "^2.1106.0",
     "change-case": "^4.1.2",
