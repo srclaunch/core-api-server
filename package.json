@@ -61,7 +61,7 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "@srclaunch/data-client": "^0.1.29",
+    "@srclaunch/data-client": "^0.1.30",
     "@srclaunch/exceptions": "^0.1.30",
     "@srclaunch/http-server": "^0.1.55",
     "@srclaunch/logger": "^0.1.31",
