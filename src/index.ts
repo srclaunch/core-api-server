@@ -24,6 +24,7 @@ export type CoreAPIServerOptions = {
     readonly force?: boolean;
   };
   readonly environment: Environment;
+  readonly logger?: Logger;
   readonly security?: {
     readonly trustedOrigins?: {
       readonly [environment: Environment['id']]: string[];
@@ -41,7 +42,11 @@ export class CoreAPIServer {
   constructor(config: CoreAPIServerOptions) {
     this.config = config;
     this.environment = config.environment;
-    this.logger = new Logger();
+    this.logger =
+      config.logger ??
+      new Logger({
+        environment: config.environment,
+      });
   }
 
   public async start() {

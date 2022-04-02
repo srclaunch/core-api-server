@@ -1,4 +1,5 @@
 import { DataClientOptions } from '@srclaunch/data-client';
+import { Logger } from '@srclaunch/logger';
 import { Environment } from '@srclaunch/types';
 export declare type CoreAPIServerOptions = {
     readonly aws: {
@@ -18,6 +19,7 @@ export declare type CoreAPIServerOptions = {
         readonly force?: boolean;
     };
     readonly environment: Environment;
+    readonly logger?: Logger;
     readonly security?: {
         readonly trustedOrigins?: {
             readonly [environment: Environment['id']]: string[];
