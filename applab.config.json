@@ -8,9 +8,14 @@
       "codeSplitting": true,
       "define": {},
       "excludeLibs": [
-        "@srclaunch/data-client",
-        "@srclaunch/http-server",
-        "aws-sdk"
+        "@srclaunch/exceptions",
+        "@srclaunch/logger",
+        "aws-sdk",
+        "compression",
+        "express",
+        "multer",
+        "pg",
+        "sequelize"
       ],
       "format": "esm",
       "inputScripts": ["src/index.ts"],
@@ -28,9 +33,14 @@
       "bundle": true,
       "define": {},
       "excludeLibs": [
-        "@srclaunch/data-client",
-        "@srclaunch/http-server",
-        "aws-sdk"
+        "@srclaunch/exceptions",
+        "@srclaunch/logger",
+        "aws-sdk",
+        "compression",
+        "express",
+        "multer",
+        "pg",
+        "sequelize"
       ],
       "format": "cjs",
       "inputScripts": ["src/index.ts"],
