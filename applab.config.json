@@ -8,12 +8,9 @@
       "codeSplitting": true,
       "define": {},
       "excludeLibs": [
-        "aws-sdk",
-        "compression",
-        "express",
-        "multer",
-        "pg",
-        "sequelize"
+        "@srclaunch/data-client",
+        "@srclaunch/http-server",
+        "aws-sdk"
       ],
       "format": "esm",
       "inputScripts": ["src/index.ts"],
@@ -31,12 +28,9 @@
       "bundle": true,
       "define": {},
       "excludeLibs": [
-        "aws-sdk",
-        "compression",
-        "express",
-        "multer",
-        "pg",
-        "sequelize"
+        "@srclaunch/data-client",
+        "@srclaunch/http-server",
+        "aws-sdk"
       ],
       "format": "cjs",
       "inputScripts": ["src/index.ts"],
