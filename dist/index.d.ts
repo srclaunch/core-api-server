@@ -27,6 +27,7 @@ export declare class CoreAPIServer {
     private config?;
     private db?;
     private readonly models?;
+    private logger;
     constructor(config: CoreAPIServerOptions);
     start(): Promise<void>;
 }

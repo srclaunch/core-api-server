@@ -6,8 +6,6 @@ import { Environment, HttpRequestMethod } from '@srclaunch/types';
 
 import entityEndpoints from './endpoints/entities';
 
-const logger = new Logger();
-
 export type CoreAPIServerOptions = {
   readonly aws: {
     readonly accessKeyId?: string;
@@ -36,13 +34,15 @@ export class CoreAPIServer {
   private config?: CoreAPIServerOptions;
   private db?: DataClient;
   private readonly models?: CoreAPIServerOptions['db']['models'];
+  private logger: Logger;
 
   constructor(config: CoreAPIServerOptions) {
     this.config = config;
+    this.logger = new Logger();
   }
 
   public async start() {
-    logger.info('Starting Core API Server');
+    this.logger.info('Starting Core API Server');
 
     if (!this.config?.db.connection) {
       throw new Exception('Core API Server config is missing connection');
@@ -125,7 +125,7 @@ export class CoreAPIServer {
 
     await server.listen();
 
-    logger.info('Core API Server started');
+    this.logger.info('Core API Server started');
   }
 }
 

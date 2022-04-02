@@ -9,6 +9,7 @@
       "define": {},
       "excludeLibs": [
         "aws-sdk",
+        "chalk",
         "compression",
         "express",
         "multer",
@@ -32,6 +33,7 @@
       "define": {},
       "excludeLibs": [
         "aws-sdk",
+        "chalk",
         "compression",
         "express",
         "multer",
