@@ -1,7 +1,7 @@
 import { DataClient, DataClientOptions } from '@srclaunch/data-client';
 import { Exception } from '@srclaunch/exceptions';
 import { HttpServer } from '@srclaunch/http-server';
-import Logger from '@srclaunch/logger';
+import { Logger } from '@srclaunch/logger';
 import { Environment, HttpRequestMethod } from '@srclaunch/types';
 
 import entityEndpoints from './endpoints/entities';
