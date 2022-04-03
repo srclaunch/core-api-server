@@ -45,7 +45,6 @@ export class CoreAPIServer {
       new Logger({
         environment: this.config.environment,
       });
-
     this.models = config.db.models;
     this.db = new DataClient({
       connection: config.db.connection,
