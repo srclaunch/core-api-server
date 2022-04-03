@@ -14,10 +14,7 @@ export declare type CoreAPIServerOptions = {
         readonly region?: string;
         readonly secretAccessKey?: string;
     };
-    readonly db: DataClientOptions & {
-        readonly alter?: boolean;
-        readonly force?: boolean;
-    };
+    readonly db: DataClientOptions;
     readonly environment: Environment;
     readonly logger?: Logger;
     readonly security?: {
@@ -32,6 +29,7 @@ export declare class CoreAPIServer {
     private environment;
     private readonly models?;
     private logger;
+    private server;
     constructor(config: CoreAPIServerOptions);
     start(): Promise<void>;
 }

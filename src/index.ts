@@ -19,10 +19,7 @@ export type CoreAPIServerOptions = {
     readonly region?: string;
     readonly secretAccessKey?: string;
   };
-  readonly db: DataClientOptions & {
-    readonly alter?: boolean;
-    readonly force?: boolean;
-  };
+  readonly db: DataClientOptions;
   readonly environment: Environment;
   readonly logger?: Logger;
   readonly security?: {
@@ -38,15 +35,91 @@ export class CoreAPIServer {
   private environment: Environment;
   private readonly models?: CoreAPIServerOptions['db']['models'];
   private logger: Logger;
+  private server: HttpServer;
 
   constructor(config: CoreAPIServerOptions) {
     this.config = config;
-    this.environment = config.environment;
+    this.environment = this.config.environment;
     this.logger =
       config.logger ??
       new Logger({
-        environment: config.environment,
+        environment: this.config.environment,
       });
+
+    this.models = config.db.models;
+    this.db = new DataClient({
+      connection: config.db.connection,
+      environment: this.environment,
+      logger: this.logger,
+      models: this.models,
+    });
+
+    this.server = new HttpServer({
+      endpoints: [
+        {
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).create,
+          method: HttpRequestMethod.Post,
+          route: '/:model',
+        },
+        {
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).deleteMany,
+          method: HttpRequestMethod.Delete,
+          route: '/:model',
+        },
+        {
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).deleteOne,
+          method: HttpRequestMethod.Delete,
+          route: '/:model/:id',
+        },
+        {
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).getMany,
+          method: HttpRequestMethod.Get,
+          route: '/:model',
+        },
+        {
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).getOne,
+          method: HttpRequestMethod.Get,
+          route: '/:model/:id',
+        },
+        {
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).updateMany,
+          method: HttpRequestMethod.Put,
+          route: '/:model',
+        },
+        {
+          handler: entityEndpoints({
+            aws: this.config.aws,
+            dataClient: this.db,
+          }).updateOne,
+          method: HttpRequestMethod.Put,
+          route: '/:model/:id',
+        },
+      ],
+      environment: this.environment,
+      name: 'core-api',
+      logger: this.logger,
+      options: {
+        trustedOrigins: this.config.security?.trustedOrigins,
+      },
+    });
   }
 
   public async start() {
@@ -54,95 +127,29 @@ export class CoreAPIServer {
       this.logger.info('Starting Core API Server');
 
       if (!this.config?.db.connection) {
-        throw new Exception('Core API Server config is missing connection');
+        throw new Exception(
+          'Core API Server config is missing database configuration',
+        );
       }
 
-      this.db = new DataClient({
-        connection: this.config.db.connection,
-        environment: this.environment,
-        logger: this.logger,
-        models: this.config.db.models,
-      });
+      if (this.db) {
+        await this.db.connect({
+          alter: this.config.db.connection.alter ?? false,
+          force: this.config.db.connection.force ?? false,
+        });
+      }
 
-      const server = new HttpServer({
-        endpoints: [
-          {
-            handler: entityEndpoints({
-              aws: this.config.aws,
-              dataClient: this.db,
-            }).create,
-            method: HttpRequestMethod.Post,
-            route: '/:model',
-          },
-          {
-            handler: entityEndpoints({
-              aws: this.config.aws,
-              dataClient: this.db,
-            }).deleteMany,
-            method: HttpRequestMethod.Delete,
-            route: '/:model',
-          },
-          {
-            handler: entityEndpoints({
-              aws: this.config.aws,
-              dataClient: this.db,
-            }).deleteOne,
-            method: HttpRequestMethod.Delete,
-            route: '/:model/:id',
-          },
-          {
-            handler: entityEndpoints({
-              aws: this.config.aws,
-              dataClient: this.db,
-            }).getMany,
-            method: HttpRequestMethod.Get,
-            route: '/:model',
-          },
-          {
-            handler: entityEndpoints({
-              aws: this.config.aws,
-              dataClient: this.db,
-            }).getOne,
-            method: HttpRequestMethod.Get,
-            route: '/:model/:id',
-          },
-          {
-            handler: entityEndpoints({
-              aws: this.config.aws,
-              dataClient: this.db,
-            }).updateMany,
-            method: HttpRequestMethod.Put,
-            route: '/:model',
-          },
-          {
-            handler: entityEndpoints({
-              aws: this.config.aws,
-              dataClient: this.db,
-            }).updateOne,
-            method: HttpRequestMethod.Put,
-            route: '/:model/:id',
-          },
-        ],
-        environment: this.environment,
-        name: 'core-api',
-        logger: this.logger,
-        options: {
-          trustedOrigins: this.config.security?.trustedOrigins,
-        },
-      });
-
-      await this.db.connect({
-        alter: this.config.db.alter ?? false,
-        force: this.config.db.force ?? false,
-      });
-
-      await server.listen();
+      if (this.server) {
+        await this.server.listen();
+      }
 
       this.logger.info('Core API Server started');
     } catch (err: any) {
       const exception = new Exception(err.name, { cause: err });
 
       this.logger.exception(exception.toJSON());
+
+      await this.server.close();
     }
   }
 }
