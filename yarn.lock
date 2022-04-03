@@ -152,7 +152,7 @@ __metadata:
     "@srclaunch/data-client": ^0.1.38
     "@srclaunch/dx": ^0.1.18
     "@srclaunch/exceptions": ^0.1.42
-    "@srclaunch/http-server": ^0.1.64
+    "@srclaunch/http-server": ^0.1.65
     "@srclaunch/logger": ^0.1.43
     "@srclaunch/node-environment": ^0.1.8
     "@srclaunch/types": ^0.1.28
@@ -228,9 +228,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/http-server@npm:^0.1.64":
-  version: 0.1.64
-  resolution: "@srclaunch/http-server@npm:0.1.64"
+"@srclaunch/http-server@npm:^0.1.65":
+  version: 0.1.65
+  resolution: "@srclaunch/http-server@npm:0.1.65"
   dependencies:
     "@srclaunch/exceptions": ^0.1.42
     "@srclaunch/logger": ^0.1.43
@@ -240,7 +240,7 @@ __metadata:
     cors: ^2.8.5
     express: ^4.17.3
     multer: ^1.4.4
-  checksum: cce66a10be583ea3cfb172d19d97ed60e11c69b67d071daf7227c6444e152ce301a3e064fba84a22f17e4080b5db5a640240c1e734cb10e19a15177d80972b48
+  checksum: e180caa9c9de9fcbe12512f7f797a2e544bbbcdb1bc299ec6d3aa45ee2df6e82887196471d7396519b09fbff41080e8ffcfd1760bcdd73fd2daf203da215251e
   languageName: node
   linkType: hard
 
