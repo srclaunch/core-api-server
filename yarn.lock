@@ -149,11 +149,11 @@ __metadata:
   resolution: "@srclaunch/core-api-server@workspace:."
   dependencies:
     "@srclaunch/cli": ^0.1.92
-    "@srclaunch/data-client": ^0.1.36
+    "@srclaunch/data-client": ^0.1.37
     "@srclaunch/dx": ^0.1.18
-    "@srclaunch/exceptions": ^0.1.41
-    "@srclaunch/http-server": ^0.1.59
-    "@srclaunch/logger": ^0.1.41
+    "@srclaunch/exceptions": ^0.1.42
+    "@srclaunch/http-server": ^0.1.60
+    "@srclaunch/logger": ^0.1.43
     "@srclaunch/node-environment": ^0.1.8
     "@srclaunch/types": ^0.1.28
     "@types/express": ^4.17.13
@@ -180,12 +180,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@srclaunch/data-client@npm:^0.1.36":
-  version: 0.1.36
-  resolution: "@srclaunch/data-client@npm:0.1.36"
+"@srclaunch/data-client@npm:^0.1.37":
+  version: 0.1.37
+  resolution: "@srclaunch/data-client@npm:0.1.37"
   dependencies:
-    "@srclaunch/exceptions": ^0.1.41
-    "@srclaunch/logger": ^0.1.41
+    "@srclaunch/exceptions": ^0.1.42
+    "@srclaunch/logger": ^0.1.43
     "@srclaunch/node-environment": ^0.1.8
     change-case: ^4.1.2
     pg: ^8.7.3
@@ -193,7 +193,7 @@ __metadata:
     pluralize: ^8.0.0
     sequelize: 6.17.0
     tunnel-ssh: ^4.1.6
-  checksum: 8ee2363cb699f874af99e7dbd1668b90dd71fc089d3ef06a9484928b24d35fa769e0a34e4cdd83e4b96129239e87de28e0c0cb967d1c42a92ffb913eced20869
+  checksum: 1ccb6d0a5075374f267cb8d00a77b88060dae007e35666b6bd0a69b93aac8c7f49ff030c2f527f5f9d653126100a3cec78c3c795472f161a0c41c61037f9520a
   languageName: node
   linkType: hard
 
@@ -216,31 +216,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/exceptions@npm:^0.1.41":
-  version: 0.1.41
-  resolution: "@srclaunch/exceptions@npm:0.1.41"
+"@srclaunch/exceptions@npm:^0.1.42":
+  version: 0.1.42
+  resolution: "@srclaunch/exceptions@npm:0.1.42"
   dependencies:
-    "@srclaunch/logger": ^0.1.41
+    "@srclaunch/logger": ^0.1.42
     luxon: ^2.3.1
     nanoid: ^3.3.2
     serialize-error: ^9.1.1
-  checksum: b60c9952f433a135c4bacfd24fa5ac236eaa6b1256d801e3840f819f46b5667f35c74515286407d3edb98562922ffcea031408cb3b5c782cbbe718d99946623d
+  checksum: a24cb1200aca74c802c3b7c8b7ad5a717b5e4a9e7c601aebb071f36e6bd821ce62febe1bf5531fdf2196c4b578032099c454fb1c28d925360ea403b770e2c5ba
   languageName: node
   linkType: hard
 
-"@srclaunch/http-server@npm:^0.1.59":
-  version: 0.1.59
-  resolution: "@srclaunch/http-server@npm:0.1.59"
+"@srclaunch/http-server@npm:^0.1.60":
+  version: 0.1.60
+  resolution: "@srclaunch/http-server@npm:0.1.60"
   dependencies:
-    "@srclaunch/exceptions": ^0.1.41
-    "@srclaunch/logger": ^0.1.41
+    "@srclaunch/exceptions": ^0.1.42
+    "@srclaunch/logger": ^0.1.43
     "@srclaunch/node-environment": ^0.1.8
     async-exit-hook: ^2.0.1
     compression: ^1.7.4
     cors: ^2.8.5
     express: ^4.17.3
     multer: ^1.4.4
-  checksum: 63fb85f079fc66fa8faf87eca0ea9437c49e0800fcff5bacd089c6771dd505b4b97c3b1a20346e77401d6382f19e157fddde38e15527991fb34776746e3ac85d
+  checksum: 9f644f2cdf8081cda0de292f4b55b6a1d65761f756afdc66b1676945644524c0ac48849cb067c02648f092a7660b6ba789664a0a197a8e9ee3ad9672cd165051
   languageName: node
   linkType: hard
 
@@ -255,14 +255,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/logger@npm:^0.1.41":
-  version: 0.1.41
-  resolution: "@srclaunch/logger@npm:0.1.41"
+"@srclaunch/logger@npm:^0.1.42, @srclaunch/logger@npm:^0.1.43":
+  version: 0.1.43
+  resolution: "@srclaunch/logger@npm:0.1.43"
   dependencies:
     chalk: ^5.0.1
     luxon: ^2.3.1
     nanoid: ^3.3.2
-  checksum: 5a904053b322862a5dd912d0619631a09deaba43746be0d4114bc3791b267bd37571c3b6a23140f10536ac4b5b41d515d7573197ab929c725b076f9d5d0dba83
+  checksum: 11eb8e6e6f5c447120745f461ef161d7cfa50b58e84b8635f92975a9bf0f57beada1d6978c2da416c8caa195c6f1320cbd1bc7e67710e94c4caafdf3c98b2ffd
   languageName: node
   linkType: hard
 
