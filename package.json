@@ -3,7 +3,7 @@
   "description": "AppLab Core API server",
   "author": "Steven Bennett <steven@srclaunch.com>",
   "license": "MIT",
-  "version": "0.1.76",
+  "version": "0.1.77",
   "engines": {
     "node": ">=16"
   },
