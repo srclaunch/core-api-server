@@ -63,7 +63,7 @@
   "dependencies": {
     "@srclaunch/data-client": "^0.1.36",
     "@srclaunch/exceptions": "^0.1.41",
-    "@srclaunch/http-server": "^0.1.56",
+    "@srclaunch/http-server": "^0.1.59",
     "@srclaunch/logger": "^0.1.41",
     "@srclaunch/node-environment": "^0.1.8",
     "aws-sdk": "^2.1106.0",
